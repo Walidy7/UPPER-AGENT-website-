@@ -41,7 +41,7 @@ export const LogoEmblem: React.FC<LogoEmblemProps> = ({
     >
       {!imageFailed ? (
         <img
-          src="/logo.png"
+          src={`${import.meta.env.BASE_URL}logo.png`}
           alt="Builder Agent Emblem"
           onError={() => setImageFailed(true)}
           className={`w-full h-full object-cover ${radius} transition-transform duration-300 hover:scale-105`}
