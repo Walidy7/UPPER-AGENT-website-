@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
 import { CONTACT_INFO, getWhatsAppUrl } from '../data/content';
-import { Menu, X, MessageCircle, ArrowRight } from 'lucide-react';
+import {
+  X,
+  MessageCircle,
+  MoreHorizontal,
+  Home,
+  Layers,
+  Sparkles,
+  PlayCircle,
+  Briefcase,
+  ShieldCheck,
+  Phone
+} from 'lucide-react';
 
 interface NavbarProps {
   onNavigate?: (sectionId: string) => void;
@@ -9,28 +20,28 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'Services', href: '#services' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Interactive Demo', href: '#agent-demo' },
-    { label: 'Our Work', href: '#portfolio' },
-    { label: 'Why Us', href: '#why-us' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '#home', icon: Home },
+    { label: 'Services', href: '#services', icon: Layers },
+    { label: 'How It Works', href: '#how-it-works', icon: Sparkles },
+    { label: 'Interactive Demo', href: '#agent-demo', icon: PlayCircle },
+    { label: 'Our Work', href: '#portfolio', icon: Briefcase },
+    { label: 'Why Us', href: '#why-us', icon: ShieldCheck },
+    { label: 'Contact', href: '#contact', icon: Phone },
   ];
 
   const handleLinkClick = (href: string) => {
-    setMobileMenuOpen(false);
+    setMenuOpen(false);
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -40,25 +51,26 @@ export const Navbar: React.FC<NavbarProps> = () => {
   return (
     <header
       id="navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#08080a]/95 backdrop-blur-md border-b border-zinc-800/80 shadow-2xl shadow-black py-3'
-          : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-[#07070b]/95 backdrop-blur-md border-b border-zinc-800/90 shadow-2xl shadow-black ${
+        isScrolled ? 'py-2.5 sm:py-3' : 'py-3.5 sm:py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo with Emblem from User Image */}
+        <div className="flex items-center justify-between gap-3">
+          {/* Logo with Emblem */}
           <a
             href="#home"
             id="nav-logo"
-            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg group"
+            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg group shrink-0"
           >
             <Logo size="md" />
           </a>
 
-          {/* Desktop Navigation Links (Carbon Black Pill with subtle Zinc Border) */}
-          <nav className="hidden lg:flex items-center gap-1 bg-[#101015]/90 px-4 py-1.5 rounded-full border border-zinc-800/80 shadow-inner">
+          {/* Desktop Navigation Links (Pill with subtle Zinc Border) */}
+          <nav
+            id="desktop-nav-links"
+            className="hidden lg:flex items-center gap-1 bg-[#121218]/90 px-3.5 py-1.5 rounded-full border border-zinc-700/80 shadow-inner"
+          >
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -67,73 +79,97 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="px-3.5 py-1.5 text-xs sm:text-sm font-medium text-slate-300 hover:text-white hover:bg-zinc-800/70 rounded-full transition-colors"
+                className="px-3.5 py-1.5 text-xs xl:text-sm font-semibold text-slate-200 hover:text-white hover:bg-zinc-800/80 rounded-full transition-all duration-150"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Right Action: Direct WhatsApp Callout in Warm Copper/Bronze */}
-          <div className="hidden sm:flex items-center gap-3">
-            <a
-              id="nav-whatsapp-cta"
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-bold rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black transition-all duration-200 shadow-md shadow-black hover:shadow-[#d99b73]/20 active:scale-[0.98]"
+          {/* Right Control: The Prominent 3-Dots Menu Button */}
+          <div className="flex items-center">
+            <button
+              id="nav-three-dots-menu-btn"
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#1a1a24] hover:bg-[#252533] border-2 border-zinc-600 hover:border-cyan-400 text-white shadow-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer active:scale-95"
+              aria-expanded={menuOpen}
+              aria-label="Open navigation menu (3 dots)"
+              title="Menu: Home, Services, How It Works, Demo, Our Work, Contact"
             >
-              <MessageCircle className="w-4 h-4 text-black fill-black" />
-              <span>Talk to Builder Agent</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 text-black" />
-            </a>
+              {menuOpen ? (
+                <X className="w-5 h-5 text-white" />
+              ) : (
+                <>
+                  {/* Three distinct glowing dots */}
+                  <MoreHorizontal className="w-5 h-5 text-cyan-400" />
+                  <span className="text-xs font-bold text-white tracking-wide">Menu</span>
+                </>
+              )}
+            </button>
           </div>
-
-          {/* Mobile Hamburger Toggle */}
-          <button
-            id="mobile-menu-toggle"
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden inline-flex items-center justify-center p-2.5 rounded-xl bg-[#121217] border border-zinc-800 text-slate-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
-            aria-expanded={mobileMenuOpen}
-            aria-label="Toggle navigation menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu in Carbon Black */}
-      {mobileMenuOpen && (
+      {/* Modern Slide-Down Navigation Drawer (Shows Home, Services, etc.) */}
+      {menuOpen && (
         <div
-          id="mobile-menu-drawer"
-          className="lg:hidden fixed inset-x-0 top-[60px] bg-[#08080c]/98 backdrop-blur-2xl border-b border-zinc-800 shadow-2xl p-5 animate-in fade-in slide-in-from-top-4 duration-200"
+          id="nav-menu-drawer"
+          className="fixed inset-x-0 top-[100%] bg-[#09090e]/98 backdrop-blur-2xl border-b-2 border-zinc-700 shadow-[0_20px_50px_rgba(0,0,0,0.95)] p-5 sm:p-6 animate-in fade-in slide-in-from-top-3 duration-200 max-h-[85vh] overflow-y-auto"
         >
-          <div className="flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(link.href);
-                }}
-                className="px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:text-white hover:bg-zinc-800/60 border border-transparent hover:border-zinc-700/50 transition-colors"
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-zinc-800">
+              <span className="text-xs uppercase font-extrabold text-cyan-400 tracking-wider">
+                Quick Navigation
+              </span>
+              <button
+                type="button"
+                onClick={() => setMenuOpen(false)}
+                className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-zinc-800 text-xs font-semibold flex items-center gap-1"
               >
-                {link.label}
-              </a>
-            ))}
+                <X className="w-4 h-4" />
+                <span>Close</span>
+              </button>
+            </div>
 
-            <div className="pt-4 border-t border-zinc-800/80">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {navLinks.map((link) => {
+                const IconComponent = link.icon;
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick(link.href);
+                    }}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-bold text-slate-100 hover:text-white bg-[#111117] hover:bg-[#1c1c28] border border-zinc-800 hover:border-cyan-500/50 transition-all duration-150 group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#181822] border border-zinc-700 flex items-center justify-center text-cyan-400 group-hover:text-white group-hover:bg-cyan-500 transition-colors shrink-0">
+                      <IconComponent className="w-4 h-4" />
+                    </div>
+                    <span>{link.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Direct WhatsApp Callout in Drawer */}
+            <div className="mt-4 pt-4 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="text-center sm:text-left">
+                <span className="text-xs text-slate-400 block">Direct WhatsApp Support:</span>
+                <span className="text-sm font-bold text-white font-mono">{CONTACT_INFO.phoneDisplay}</span>
+              </div>
+
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3.5 text-base font-bold rounded-xl bg-gradient-to-r from-[#d99b73] to-[#c2855f] text-black shadow-lg shadow-black active:scale-95"
+                onClick={() => setMenuOpen(false)}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-extrabold rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg shadow-black active:scale-95 transition-all duration-150"
               >
-                <MessageCircle className="w-5 h-5 text-black fill-black" />
-                <span>WhatsApp: {CONTACT_INFO.phoneDisplay}</span>
+                <MessageCircle className="w-4 h-4 text-white fill-white" />
+                <span>Open WhatsApp Chat</span>
               </a>
             </div>
           </div>

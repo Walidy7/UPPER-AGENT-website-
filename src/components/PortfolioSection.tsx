@@ -68,26 +68,28 @@ export const PortfolioSection: React.FC = () => {
             {/* Device Switcher */}
             <div className="flex items-center gap-1 bg-[#060609] p-1 rounded-lg border border-zinc-800">
               <button
+                type="button"
                 onClick={() => setDeviceMode('desktop')}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium transition-colors ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                   deviceMode === 'desktop'
-                    ? 'bg-[#181822] text-white shadow-sm border border-zinc-700'
+                    ? 'bg-[#181822] text-white shadow-sm border border-zinc-750'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
                 <Laptop className="w-3.5 h-3.5 text-cyan-400" />
-                <span className="hidden sm:inline">Desktop View</span>
+                <span>Desktop</span>
               </button>
               <button
+                type="button"
                 onClick={() => setDeviceMode('mobile')}
-                className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-medium transition-colors ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                   deviceMode === 'mobile'
-                    ? 'bg-[#181822] text-white shadow-sm border border-zinc-700'
+                    ? 'bg-[#181822] text-white shadow-sm border border-zinc-750'
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
                 <Smartphone className="w-3.5 h-3.5 text-[#d99b73]" />
-                <span className="hidden sm:inline">Mobile (WhatsApp Ready)</span>
+                <span>Mobile</span>
               </button>
             </div>
           </div>

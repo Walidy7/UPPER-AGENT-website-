@@ -159,12 +159,12 @@ export const InteractiveAgentDemo: React.FC = () => {
 
         {/* Industry Switcher Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          <span className="text-xs text-slate-400 mr-1 hidden sm:inline">Choose Industry Example:</span>
+          <span className="text-xs text-slate-400 mr-1 inline-block">Industry:</span>
           {DEMO_INDUSTRIES.map((ind) => (
             <button
               key={ind.id}
               onClick={() => handleSelectIndustry(ind.id)}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border ${
+              className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border ${
                 selectedIndustryId === ind.id
                   ? 'bg-gradient-to-r from-[#d99b73] to-[#c2855f] text-black border-[#d99b73] shadow-md shadow-black'
                   : 'bg-[#0f0f14] text-slate-300 hover:text-white border-zinc-800 hover:bg-[#15151c]'
@@ -185,8 +185,9 @@ export const InteractiveAgentDemo: React.FC = () => {
                 <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                 <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
               </div>
-              <span className="text-xs text-slate-400 ml-2 font-medium hidden sm:inline">
-                Builder Agent Client Preview
+              <span className="text-xs text-slate-300 ml-2 font-medium">
+                <span className="sm:hidden">Live Preview</span>
+                <span className="hidden sm:inline">Builder Agent Client Preview</span>
               </span>
             </div>
 

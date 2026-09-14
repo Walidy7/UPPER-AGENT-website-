@@ -75,9 +75,9 @@ export const PreviewBeforeLaunch: React.FC = () => {
                 How We Guarantee Your Satisfaction
               </h4>
             </div>
-            <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#14141c] text-slate-300 text-xs font-medium border border-zinc-700">
-              <Check className="w-3.5 h-3.5 text-emerald-400" />
-              Guaranteed Review Window
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#14141c] text-slate-200 text-xs font-semibold border border-zinc-700 shadow-sm">
+              <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <span>Guaranteed Review</span>
             </span>
           </div>
 
