@@ -57,21 +57,21 @@ export const Hero: React.FC = () => {
               <span className="text-slate-200 font-semibold">Telegram</span>.
             </p>
 
-            {/* Fast Value Bullets with small cyan checks */}
+            {/* Fast Value Bullets with symmetrical padding */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-xl mx-auto lg:mx-0 mb-9 text-xs sm:text-sm text-slate-300">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-[#0c0c12]/60 sm:bg-transparent border border-zinc-800/80 sm:border-0 text-left">
                 <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>Custom mobile-first website design</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-[#0c0c12]/60 sm:bg-transparent border border-zinc-800/80 sm:border-0 text-left">
                 <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>24/7 intelligent customer-support agent</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-[#0c0c12]/60 sm:bg-transparent border border-zinc-800/80 sm:border-0 text-left">
                 <CheckCircle2 className="w-4 h-4 text-[#d99b73] shrink-0" />
                 <span>Private preview before final delivery</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5 p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-[#0c0c12]/60 sm:bg-transparent border border-zinc-800/80 sm:border-0 text-left">
                 <CheckCircle2 className="w-4 h-4 text-[#d99b73] shrink-0" />
                 <span>Direct WhatsApp consultation &amp; setup</span>
               </div>

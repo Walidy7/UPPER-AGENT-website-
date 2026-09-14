@@ -75,7 +75,7 @@ export const MultiChannelVisual: React.FC = () => {
                 Trained on your business pricing, opening hours, product catalog, delivery policies &amp; FAQ
               </p>
 
-              <div className="mt-4 pt-3 border-t border-zinc-800 flex items-center justify-center gap-4 text-[11px] text-slate-300">
+              <div className="mt-4 pt-3 border-t border-zinc-800 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-[11px] text-slate-300">
                 <span className="flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                   Instant Verification

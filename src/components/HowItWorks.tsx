@@ -34,7 +34,7 @@ export const HowItWorks: React.FC = () => {
         </div>
 
         {/* 5-Step Process Timeline Cards in Carbon Black */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
           {HOW_IT_WORKS.map((step, idx) => {
             const Icon = stepIcons[idx] || Rocket;
             return (

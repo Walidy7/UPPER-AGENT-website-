@@ -286,10 +286,10 @@ export const InteractiveAgentDemo: React.FC = () => {
             </div>
 
             {/* FLOATING AGENT CHAT WIDGET (Lower Right) */}
-            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 flex flex-col items-end">
+            <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 z-20 flex flex-col items-end max-w-[calc(100%-1.5rem)] sm:max-w-none">
               {/* The Opened Chat Window in Carbon Black */}
               {isChatOpen && (
-                <div className="w-[300px] sm:w-[350px] h-[400px] sm:h-[450px] rounded-2xl bg-[#0e0e14] border border-zinc-700/80 shadow-2xl flex flex-col overflow-hidden mb-3 animate-in fade-in zoom-in-95 duration-200">
+                <div className="w-[calc(100vw-3.5rem)] max-w-[340px] sm:w-[350px] h-[380px] sm:h-[450px] rounded-2xl bg-[#0e0e14] border border-zinc-700/80 shadow-2xl flex flex-col overflow-hidden mb-2 sm:mb-3 animate-in fade-in zoom-in-95 duration-200">
                   {/* Chat Window Header */}
                   <div className="bg-[#14141c] p-3.5 border-b border-zinc-800 flex items-center justify-between text-white">
                     <div className="flex items-center gap-2.5">

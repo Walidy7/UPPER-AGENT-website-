@@ -336,7 +336,7 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div
       className={`flex select-none ${
-        layout === 'vertical' ? 'flex-col items-center text-center gap-2' : 'items-center gap-3'
+        layout === 'vertical' ? 'flex-col items-center text-center gap-2' : 'items-center gap-2.5 sm:gap-3'
       } ${className}`}
     >
       {/* 100% Round Emblem ONLY (No embedded text, perfectly circular) */}
@@ -344,8 +344,8 @@ export const Logo: React.FC<LogoProps> = ({
 
       {/* Brand Text: BUILDER AGENT */}
       {showText && (
-        <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1.5 tracking-tight">
+        <div className="flex flex-col text-left min-w-0">
+          <div className="flex items-center gap-1 sm:gap-1.5 tracking-tight">
             <span
               className={`bg-gradient-to-b from-white via-slate-100 to-slate-400 bg-clip-text text-transparent font-black tracking-wider uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${textSizes[size].builder}`}
             >
@@ -358,7 +358,7 @@ export const Logo: React.FC<LogoProps> = ({
             </span>
           </div>
           <span
-            className={`font-semibold tracking-widest text-[#d99b73] uppercase mt-1 ${textSizes[size].tagline}`}
+            className={`hidden sm:block font-semibold tracking-widest text-[#d99b73] uppercase mt-0.5 sm:mt-1 ${textSizes[size].tagline}`}
           >
             Websites &bull; 24/7 Intelligent Agents
           </span>

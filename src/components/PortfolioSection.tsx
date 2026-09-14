@@ -112,15 +112,15 @@ export const PortfolioSection: React.FC = () => {
                 </div>
 
                 {/* Simulated Website Body */}
-                <div className="p-6 sm:p-8 bg-gradient-to-b from-[#101017] via-[#0b0b0f] to-[#07070a]">
-                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-800">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-md bg-[#d99b73] flex items-center justify-center font-bold text-black text-xs">
+                <div className="p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-[#101017] via-[#0b0b0f] to-[#07070a]">
+                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-800 gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <div className="w-7 h-7 rounded-md bg-[#d99b73] flex items-center justify-center font-bold text-black text-xs shrink-0">
                         {activeProject.title[0]}
                       </div>
-                      <span className="text-sm font-bold text-white">{activeProject.title}</span>
+                      <span className="text-sm font-bold text-white truncate">{activeProject.title}</span>
                     </div>
-                    <span className="text-xs px-3 py-1 rounded-md bg-[#161622] text-[#d99b73] border border-zinc-800">
+                    <span className="text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-md bg-[#161622] text-[#d99b73] border border-zinc-800 shrink-0">
                       WhatsApp Connected
                     </span>
                   </div>
@@ -129,14 +129,14 @@ export const PortfolioSection: React.FC = () => {
                     <span className="text-[11px] uppercase font-bold text-cyan-400 tracking-wider">
                       {activeProject.category}
                     </span>
-                    <h3 className="text-2xl sm:text-3xl font-black text-white mt-1 mb-3 leading-tight">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mt-1 mb-3 leading-tight">
                       {activeProject.desktopPreview.heroTitle}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
                       {activeProject.desktopPreview.heroSubtitle}
                     </p>
 
-                    <div className="grid grid-cols-2 gap-2 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                       {activeProject.desktopPreview.features.map((feat, i) => (
                         <div key={i} className="flex items-center gap-2 text-xs text-slate-300">
                           <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
@@ -145,26 +145,26 @@ export const PortfolioSection: React.FC = () => {
                       ))}
                     </div>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                       <a
                         href={getWhatsAppUrl(
                           `Hello Builder Agent, I like the concept for "${activeProject.title}" and want a similar website for my business.`
                         )}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black font-bold text-xs flex items-center gap-2 shadow"
+                        className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black font-bold text-xs flex items-center justify-center gap-2 shadow"
                       >
                         <MessageCircle className="w-3.5 h-3.5 text-black fill-black" />
                         <span>{activeProject.desktopPreview.ctaText}</span>
                       </a>
-                      <span className="text-[11px] text-slate-400">Integrated 24/7 Agent</span>
+                      <span className="text-[11px] text-slate-400 text-center sm:text-left">Integrated 24/7 Agent</span>
                     </div>
                   </div>
                 </div>
               </div>
             ) : (
               /* Mobile Smartphone Mockup */
-              <div className="w-[300px] sm:w-[320px] rounded-[36px] bg-[#0c0c12] border-[6px] border-[#181822] shadow-2xl shadow-black p-4 overflow-hidden animate-in fade-in duration-200">
+              <div className="w-full max-w-[300px] sm:max-w-[320px] rounded-[36px] bg-[#0c0c12] border-[6px] border-[#181822] shadow-2xl shadow-black p-3.5 sm:p-4 overflow-hidden animate-in fade-in duration-200">
                 {/* Speaker pill notch */}
                 <div className="w-24 h-4 bg-[#181822] rounded-full mx-auto mb-3" />
 

@@ -56,20 +56,22 @@ export const Navbar: React.FC<NavbarProps> = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3">
-          {/* Logo with Emblem */}
-          <a
-            href="#home"
-            id="nav-logo"
-            className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg group shrink-0"
-          >
-            <Logo size="md" />
-          </a>
+        <div className="flex items-center justify-between">
+          {/* Left Column: Logo (flex-1 balances the right column) */}
+          <div className="flex items-center flex-1 justify-start min-w-0">
+            <a
+              href="#home"
+              id="nav-logo"
+              className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-lg group shrink-0"
+            >
+              <Logo size="md" />
+            </a>
+          </div>
 
-          {/* Desktop Navigation Links (Pill with subtle Zinc Border) */}
+          {/* Center Column: Desktop Navigation Links (Mathematically centered on PC) */}
           <nav
             id="desktop-nav-links"
-            className="hidden lg:flex items-center gap-1 bg-[#121218]/90 px-3.5 py-1.5 rounded-full border border-zinc-700/80 shadow-inner"
+            className="hidden lg:flex items-center justify-center gap-1 bg-[#121218]/90 px-3.5 py-1.5 rounded-full border border-zinc-700/80 shadow-inner shrink-0"
           >
             {navLinks.map((link) => (
               <a
@@ -79,29 +81,32 @@ export const Navbar: React.FC<NavbarProps> = () => {
                   e.preventDefault();
                   handleLinkClick(link.href);
                 }}
-                className="px-3.5 py-1.5 text-xs xl:text-sm font-semibold text-slate-200 hover:text-white hover:bg-zinc-800/80 rounded-full transition-all duration-150"
+                className="px-3 xl:px-4 py-1.5 text-xs xl:text-sm font-semibold text-slate-200 hover:text-white hover:bg-zinc-800/80 rounded-full transition-all duration-150 whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Right Control: The Prominent 3-Dots Menu Button */}
-          <div className="flex items-center">
+          {/* Right Column: Symmetrically Anchored 3-Dots Menu Button */}
+          <div className="flex items-center flex-1 justify-end">
             <button
               id="nav-three-dots-menu-btn"
               type="button"
               onClick={() => setMenuOpen(!menuOpen)}
-              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#1a1a24] hover:bg-[#252533] border-2 border-zinc-600 hover:border-cyan-400 text-white shadow-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer active:scale-95"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2 rounded-xl bg-[#1a1a24] hover:bg-[#252533] border-2 border-zinc-600 hover:border-cyan-400 text-white shadow-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 cursor-pointer active:scale-95 shrink-0"
               aria-expanded={menuOpen}
               aria-label="Open navigation menu (3 dots)"
               title="Menu: Home, Services, How It Works, Demo, Our Work, Contact"
             >
               {menuOpen ? (
-                <X className="w-5 h-5 text-white" />
+                <>
+                  <X className="w-5 h-5 text-white" />
+                  <span className="text-xs font-bold text-white tracking-wide">Close</span>
+                </>
               ) : (
                 <>
-                  {/* Three distinct glowing dots */}
+                  {/* Three distinct dots */}
                   <MoreHorizontal className="w-5 h-5 text-cyan-400" />
                   <span className="text-xs font-bold text-white tracking-wide">Menu</span>
                 </>
