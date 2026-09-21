@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PORTFOLIO_PROJECTS, getWhatsAppUrl } from '../data/content';
+import { PORTFOLIO_PROJECTS } from '../data/content';
 import { PortfolioProject } from '../types';
 import {
   Laptop,
@@ -147,15 +147,11 @@ export const PortfolioSection: React.FC = () => {
 
                     <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                       <a
-                        href={getWhatsAppUrl(
-                          `Hello Builder Agent, I like the concept for "${activeProject.title}" and want a similar website for my business.`
-                        )}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black font-bold text-xs flex items-center justify-center gap-2 shadow"
+                        href="#contact"
+                        className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-bold text-xs flex items-center justify-center gap-2 shadow transition-all active:scale-95"
                       >
-                        <MessageCircle className="w-3.5 h-3.5 text-black fill-black" />
-                        <span>{activeProject.desktopPreview.ctaText}</span>
+                        <span>Request Similar Website</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-black" />
                       </a>
                       <span className="text-[11px] text-slate-400 text-center sm:text-left">Integrated 24/7 Agent</span>
                     </div>
@@ -175,7 +171,7 @@ export const PortfolioSection: React.FC = () => {
                       {activeProject.title}
                     </span>
                     <span className="text-[9px] px-2 py-0.5 rounded bg-[#161622] text-[#d99b73] border border-zinc-800">
-                      Open in WhatsApp
+                      Mobile Preview
                     </span>
                   </div>
 
@@ -200,15 +196,11 @@ export const PortfolioSection: React.FC = () => {
 
                   <div className="mt-5">
                     <a
-                      href={getWhatsAppUrl(
-                        `Hello Builder Agent, I looked at the mobile mockup for "${activeProject.title}" and want to build a mobile-first site like this.`
-                      )}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] to-[#c2855f] text-black font-extrabold text-[11px] flex items-center justify-center gap-1.5 text-center shadow"
+                      href="#contact"
+                      className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] to-[#c2855f] hover:from-[#e4b090] text-black font-extrabold text-[11px] flex items-center justify-center gap-1.5 text-center shadow transition-all active:scale-95"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 text-black fill-black" />
-                      <span>{activeProject.desktopPreview.ctaText}</span>
+                      <span>Request This Design</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-black" />
                     </a>
                   </div>
                 </div>
@@ -231,12 +223,8 @@ export const PortfolioSection: React.FC = () => {
             </div>
 
             <a
-              href={getWhatsAppUrl(
-                `Hello Builder Agent, I want to build a website similar to "${activeProject.title}" for my business.`
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black text-xs sm:text-sm font-extrabold transition-all shadow-md shrink-0"
+              href="#contact"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black text-xs sm:text-sm font-extrabold transition-all shadow-md shrink-0 active:scale-95"
             >
               <span>Build Something Similar</span>
               <ArrowRight className="w-4 h-4 text-black" />

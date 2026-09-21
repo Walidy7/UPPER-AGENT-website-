@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { WHO_WE_HELP, getWhatsAppUrl } from '../data/content';
+import { WHO_WE_HELP } from '../data/content';
 import {
   Utensils,
   Scissors,
@@ -107,12 +107,8 @@ export const WhoWeHelp: React.FC = () => {
             </span>
 
             <a
-              href={getWhatsAppUrl(
-                `Hello Builder Agent, I run a business in ${currentCat.title} and want to discuss a website and agent.`
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black font-extrabold text-xs sm:text-sm transition-all shadow-md active:scale-95"
+              href="#contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-xs sm:text-sm transition-all shadow-md active:scale-95"
             >
               <span>Discuss {currentCat.title} Solution</span>
               <ArrowRight className="w-4 h-4 text-black" />

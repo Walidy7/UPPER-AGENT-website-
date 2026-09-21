@@ -20,17 +20,9 @@ export const Footer: React.FC = () => {
               customer communication through modern, high-performance websites and intelligent 24/7
               agents.
             </p>
-            <div className="flex items-center gap-2 text-xs text-[#d99b73] font-medium">
-              <span className="text-slate-400">Direct WhatsApp Contact:</span>
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-4 hover:text-white font-mono"
-              >
-                {CONTACT_INFO.phoneDisplay}
-              </a>
-            </div>
+            <p className="text-xs text-slate-500">
+              Modern web engineering &bull; Fast turnarounds &bull; Direct consultation
+            </p>
           </div>
 
           {/* Services Col */}

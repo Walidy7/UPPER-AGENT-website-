@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
-import { CONTACT_INFO, getWhatsAppUrl } from '../data/content';
 import {
   X,
-  MessageCircle,
   MoreHorizontal,
   Home,
   Layers,
@@ -159,22 +157,22 @@ export const Navbar: React.FC<NavbarProps> = () => {
               })}
             </div>
 
-            {/* Direct WhatsApp Callout in Drawer */}
+            {/* Quick Action in Drawer */}
             <div className="mt-4 pt-4 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
               <div className="text-center sm:text-left">
-                <span className="text-xs text-slate-400 block">Direct WhatsApp Support:</span>
-                <span className="text-sm font-bold text-white font-mono">{CONTACT_INFO.phoneDisplay}</span>
+                <span className="text-xs text-slate-400 block">Ready to discuss your project?</span>
+                <span className="text-sm font-bold text-white">We respond promptly to all inquiries</span>
               </div>
 
               <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMenuOpen(false)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-extrabold rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg shadow-black active:scale-95 transition-all duration-150"
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick('#contact');
+                }}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-extrabold rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black shadow-lg shadow-black active:scale-95 transition-all duration-150"
               >
-                <MessageCircle className="w-4 h-4 text-white fill-white" />
-                <span>Open WhatsApp Chat</span>
+                <span>Get a Project Quote</span>
               </a>
             </div>
           </div>

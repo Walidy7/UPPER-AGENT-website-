@@ -1,7 +1,6 @@
 import React from 'react';
-import { CONTACT_INFO, getWhatsAppUrl } from '../data/content';
 import { Logo, LogoEmblem } from './Logo';
-import { ArrowRight, MessageCircle, Globe, ShieldCheck, Sparkles, CheckCircle2, Compass } from 'lucide-react';
+import { ArrowRight, MessageCircle, Globe, ShieldCheck, Sparkles, CheckCircle2, Compass, PlayCircle } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -73,49 +72,35 @@ export const Hero: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5 p-2.5 sm:p-0 rounded-xl sm:rounded-none bg-[#0c0c12]/60 sm:bg-transparent border border-zinc-800/80 sm:border-0 text-left">
                 <CheckCircle2 className="w-4 h-4 text-[#d99b73] shrink-0" />
-                <span>Direct WhatsApp consultation &amp; setup</span>
+                <span>Direct personal consultation &amp; setup</span>
               </div>
             </div>
 
             {/* Hero CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a
-                id="hero-cta-whatsapp"
-                href={getWhatsAppUrl(CONTACT_INFO.websiteBuildingMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
+                id="hero-cta-start"
+                href="#contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-base transition-all duration-200 shadow-xl shadow-black hover:shadow-[#d99b73]/20 active:scale-[0.98]"
               >
-                <span>Build My Website</span>
+                <span>Start Your Project</span>
                 <ArrowRight className="w-4 h-4 text-black" />
               </a>
 
               <a
-                id="hero-cta-agent"
-                href={getWhatsAppUrl(CONTACT_INFO.agentMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
+                id="hero-cta-demos"
+                href="#agent-demo"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#101015] hover:bg-[#16161d] text-slate-200 hover:text-white font-semibold text-base border border-zinc-800 transition-all duration-200 hover:border-cyan-500/40 active:scale-[0.98]"
               >
-                <MessageCircle className="w-4 h-4 text-cyan-400" />
-                <span>Talk to Builder Agent</span>
+                <PlayCircle className="w-4 h-4 text-cyan-400" />
+                <span>Explore Interactive Demo</span>
               </a>
             </div>
 
-            {/* Trust Line with WhatsApp Contact */}
+            {/* Trust Line */}
             <div className="mt-7 flex items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm text-slate-400">
               <ShieldCheck className="w-4 h-4 text-[#d99b73]" />
-              <span>
-                Direct WhatsApp Contact:{' '}
-                <a
-                  href={getWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold text-white hover:text-[#d99b73] underline underline-offset-4 decoration-[#d99b73]/50 transition-colors"
-                >
-                  {CONTACT_INFO.phoneDisplay}
-                </a>
-              </span>
+              <span>Direct 1-on-1 Consultation &bull; Live Private Preview &bull; Fast 48h Delivery</span>
             </div>
           </div>
 

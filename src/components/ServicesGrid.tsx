@@ -1,5 +1,5 @@
 import React from 'react';
-import { SERVICES, getWhatsAppUrl } from '../data/content';
+import { SERVICES } from '../data/content';
 import {
   Globe,
   RefreshCw,
@@ -90,14 +90,10 @@ export const ServicesGrid: React.FC = () => {
 
                 <div className="mt-6 pt-4 border-t border-zinc-800/80">
                   <a
-                    href={getWhatsAppUrl(
-                      `Hello Builder Agent, I would like to inquire about your ${service.title} service for my business.`
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#contact"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#d99b73] hover:text-white group-hover:translate-x-1 transition-transform"
                   >
-                    <span>Inquire About {service.title}</span>
+                    <span>Get Started with {service.title}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>

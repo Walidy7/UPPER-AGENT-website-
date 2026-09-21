@@ -65,18 +65,16 @@ export const ContactSection: React.FC = () => {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-base transition-all duration-200 shadow-xl shadow-black active:scale-95"
             >
               <MessageCircle className="w-5 h-5 text-black fill-black" />
-              <span>Talk to Builder Agent</span>
+              <span>Message Us on WhatsApp</span>
             </a>
 
             <a
               id="cta-start-website"
-              href={getWhatsAppUrl(CONTACT_INFO.websiteBuildingMessage)}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#project-form"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#121218] hover:bg-[#181822] text-slate-100 font-bold text-base border border-zinc-800 hover:border-cyan-500/40 transition-all duration-200 active:scale-95"
             >
-              <Globe className="w-5 h-5 text-cyan-400" />
-              <span>Start Your Website</span>
+              <Send className="w-4 h-4 text-cyan-400" />
+              <span>Fill Quick Inquiry Form</span>
             </a>
           </div>
 
@@ -150,7 +148,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Right Column: Fast 1-Click WhatsApp Inquiry Form */}
-          <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#0c0c11] border border-zinc-800/90">
+          <div id="project-form" className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-[#0c0c11] border border-zinc-800/90">
             <span className="text-xs uppercase font-bold text-cyan-400 tracking-wider">
               Quick Project Form
             </span>

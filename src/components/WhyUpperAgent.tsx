@@ -1,5 +1,5 @@
 import React from 'react';
-import { WHY_UPPER_AGENT, CONTACT_INFO, getWhatsAppUrl } from '../data/content';
+import { WHY_UPPER_AGENT } from '../data/content';
 import {
   ShieldCheck,
   Smartphone,
@@ -87,12 +87,10 @@ export const WhyUpperAgent: React.FC = () => {
           </div>
 
           <a
-            href={getWhatsAppUrl(CONTACT_INFO.websiteBuildingMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black font-extrabold text-sm transition-all duration-200 shadow-lg shadow-black active:scale-95"
+            href="#contact"
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-sm transition-all duration-200 shadow-lg shadow-black active:scale-95"
           >
-            <span>Message {CONTACT_INFO.phoneDisplay}</span>
+            <span>Start Your Project</span>
             <ArrowRight className="w-4 h-4 text-black" />
           </a>
         </div>

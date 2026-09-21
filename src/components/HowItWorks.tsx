@@ -1,5 +1,5 @@
 import React from 'react';
-import { HOW_IT_WORKS, getWhatsAppUrl } from '../data/content';
+import { HOW_IT_WORKS } from '../data/content';
 import {
   MessageSquare,
   Layout,
@@ -72,15 +72,13 @@ export const HowItWorks: React.FC = () => {
         {/* Simple Consultation Bar */}
         <div className="mt-12 text-center">
           <p className="text-xs sm:text-sm text-slate-400 mb-4">
-            Ready to get started with step 01? It begins with a friendly WhatsApp message.
+            Ready to get started with step 01? Tell us about your business and project goals.
           </p>
           <a
-            href={getWhatsAppUrl('Hello Builder Agent, I want to start step 01 and tell you about my business.')}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-sm transition-all duration-200 shadow-xl shadow-black active:scale-95"
           >
-            <span>Start Step 01 On WhatsApp</span>
+            <span>Start Step 01: Share Your Vision</span>
             <ArrowRight className="w-4 h-4 text-black" />
           </a>
         </div>

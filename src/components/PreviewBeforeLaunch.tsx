@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PREVIEW_STEPS, getWhatsAppUrl } from '../data/content';
+import { PREVIEW_STEPS } from '../data/content';
 import {
   Eye,
   Check,
@@ -129,10 +129,8 @@ export const PreviewBeforeLaunch: React.FC = () => {
             </div>
 
             <a
-              href={getWhatsAppUrl('Hello Builder Agent, I want to learn more about the website building and preview process.')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] text-black font-extrabold text-xs sm:text-sm transition-all shadow-md active:scale-95"
+              href="#contact"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-xs sm:text-sm transition-all shadow-md active:scale-95"
             >
               <span>Start With A Free Consultation</span>
               <ArrowRight className="w-3.5 h-3.5 text-black" />

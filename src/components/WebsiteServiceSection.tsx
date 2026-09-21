@@ -1,5 +1,4 @@
 import React from 'react';
-import { CONTACT_INFO, getWhatsAppUrl } from '../data/content';
 import {
   Globe,
   Smartphone,
@@ -85,9 +84,7 @@ export const WebsiteServiceSection: React.FC = () => {
 
             <div className="mt-8">
               <a
-                href={getWhatsAppUrl(CONTACT_INFO.websiteBuildingMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-sm transition-all duration-200 shadow-xl shadow-black active:scale-95"
               >
                 <span>Discuss Your Website Project</span>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DEMO_INDUSTRIES, getWhatsAppUrl } from '../data/content';
+import { DEMO_INDUSTRIES } from '../data/content';
 import { LogoEmblem } from './Logo';
 import {
   Send,
@@ -437,15 +437,11 @@ export const InteractiveAgentDemo: React.FC = () => {
             </div>
 
             <a
-              href={getWhatsAppUrl(
-                `Hello Builder Agent, I tested the ${activeIndustry.name} agent demo and want to discuss an agent for my business.`
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="inline-flex items-center gap-1.5 text-[#d99b73] hover:text-white font-bold underline underline-offset-4"
             >
               <span>Build this for my business</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ChevronRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

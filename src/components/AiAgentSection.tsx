@@ -1,5 +1,4 @@
 import React from 'react';
-import { CONTACT_INFO, getWhatsAppUrl } from '../data/content';
 import {
   Bot,
   Clock,
@@ -116,17 +115,15 @@ export const AiAgentSection: React.FC = () => {
               Want to see how an agent would sound for your business?
             </h4>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Message us on WhatsApp. Tell us your business name, and we'll show you an example response.
+              Test out our live simulated agent below, or share your business requirements with us.
             </p>
           </div>
 
           <a
-            href={getWhatsAppUrl(CONTACT_INFO.agentMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#d99b73] via-[#c2855f] to-[#b47b59] hover:from-[#e4b090] hover:to-[#c2855f] text-black font-extrabold text-sm transition-all duration-200 shadow-lg shadow-black active:scale-95"
           >
-            <span>Ask About Your Business Agent</span>
+            <span>Request Custom AI Agent</span>
             <ArrowRight className="w-4 h-4 text-black" />
           </a>
         </div>
