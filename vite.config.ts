@@ -4,8 +4,22 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  // Smart base path resolution for GitHub Pages:
+  // 1. If VITE_BASE_PATH is provided (from configure-pages action)
+  // 2. Or if GITHUB_REPOSITORY is available in GitHub Actions
+  // 3. Default to './' for standalone/local builds
+  let base = './';
+  if (process.env.VITE_BASE_PATH) {
+    base = process.env.VITE_BASE_PATH.endsWith('/')
+      ? process.env.VITE_BASE_PATH
+      : `${process.env.VITE_BASE_PATH}/`;
+  } else if (process.env.GITHUB_REPOSITORY) {
+    const repo = process.env.GITHUB_REPOSITORY.split('/')[1];
+    base = repo && !repo.endsWith('.github.io') ? `/${repo}/` : '/';
+  }
+
   return {
-    base: './',
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
